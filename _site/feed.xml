@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hanjack</title>
+    <description>A simple, whitespace, helvetica based portfolio theme.
+</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 03 May 2016 06:04:38 +0900</pubDate>
+    <lastBuildDate>Tue, 03 May 2016 06:04:38 +0900</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Stacked Denoising Autoencoder (SdA) with Theano</title>
+        <description>&lt;p&gt;참고 문서&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://deeplearning.net/tutorial/SdA.html#sda&quot;&gt;Theano&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Stacked Denoising Autoencoder (SdA)는 stacked autoencoder의 확장된 버전이다.&lt;/p&gt;
+
+&lt;h1 id=&quot;stacked-autoencoder&quot;&gt;Stacked Autoencoder&lt;/h1&gt;
+
+</description>
+        <pubDate>Thu, 28 Apr 2016 09:20:00 +0900</pubDate>
+        <link>/deep/learning/2016/04/28/theano-stacked-denoising-autoencoder.html</link>
+        <guid isPermaLink="true">/deep/learning/2016/04/28/theano-stacked-denoising-autoencoder.html</guid>
+        
+        <category>DeepLearning</category>
+        
+        <category>Unsupervised learning</category>
+        
+        <category>Neural Networks</category>
+        
+        <category>Theano</category>
+        
+        <category>Auto-Encoder</category>
+        
+        
+        <category>Deep</category>
+        
+        <category>Learning</category>
+        
+      </item>
+    
+      <item>
+        <title>Convolutional Neural Network with Theano</title>
+        <description>&lt;h1 id=&quot;cnn-&quot;&gt;CNN의 특징&lt;/h1&gt; &lt;h2 id=&quot;sparse-connective&quot;&gt;Sparse Connective &lt;/h2&gt; &lt;p&gt;Convolutional Neural Networks(CNN)은 뉴런간 지역적인 상관관계를 이용한 것으로, 인접한 레이어와 뉴런간의 연결 패턴을 적용한 것이다. 즉, hidden layer &lt;strong&gt;m&lt;/strong&gt;의 입력들은 &lt;strong&gt;m-1&lt;/strong&gt; layer의 출력 중 일부이며, unit들은 공간적으로 연속적으로 입력 데이터를 받아 들인다고 할 수 있다.&lt;/p&gt; &lt;p&gt;&lt;img class=&quot;col one center&quot; src=&quot;/images/201604/sparse_1D_nn.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;위 그림에서 unit간 연결 관계를 살펴보면, 입력을 제외한 모든 Layer의 unit들은 세개의 입력만을 하위 layer에서 받아들인다. 하지만 layer &lt;strong&gt;m+1&lt;/strong&gt;의 unit의 입력은 layer &lt;strong&gt;m&lt;/strong&gt;을 거치면서 5개가 된다. 따라서 적은 입력을 받는 unit으로 구성한다 하더라도 layer와 unit의 연결 수의 상관관계에 따라서 unit은 더 많은 입력 데이터에 대한 학습을 할 수 있다.&lt;/p&gt; &lt;h2 id=&quot;shared-weights&quot;&gt;Shared Weights&lt;/h2&gt; &lt;p&gt;CNN에서는...</description>
+        <pubDate>Thu, 28 Apr 2016 09:20:00 +0900</pubDate>
+        <link>/deep/learning/2016/04/28/theano-cnn.html</link>
+        <guid isPermaLink="true">/deep/learning/2016/04/28/theano-cnn.html</guid>
+        
+        <category>DeepLearning</category>
+        
+        <category>Supervised learning</category>
+        
+        <category>Neural Networks</category>
+        
+        <category>Theano</category>
+        
+        <category>Convolutional Network</category>
+        
+        
+        <category>Deep</category>
+        
+        <category>Learning</category>
+        
+      </item>
+    
+      <item>
+        <title>Jupyter 노트북 테마적용</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://jupyter.org&quot;&gt;Jupyter&lt;/a&gt;의 테마는 원래 하얀 색이다. &lt;img class=&quot;col&quot; src=&quot;http://jupyter.org/assets/jupyterpreview.png&quot; /&gt; &lt;!-- ![Jupyter 홈페이지에서 볼 수 있는 Jupyter의 기본 화면](http://jupyter.org/assets/jupyterpreview.png) --&gt;&lt;/p&gt; &lt;p&gt;코딩이 가능하면서도 문서와 같은 분위기여서 사용하는데 큰 무리 없이 사용할 수 있다. 하지만 모든 것(터미널 에디터 등)을 검은 화면으로 사용하는 나에게 하얀 화면은 너무 눈이 부셔서 어쩔 수 없이 보다 어두운 색으로 바꾸고 싶다는 생각이 들었다.&lt;/p&gt; &lt;p&gt;검색을 해보니 다음과 같은 github repository가 나왔다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/nsonnad/base16-ipython-notebook&quot;&gt;42 Jupyter theme&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/dunovank/jupyter-themes&quot;&gt;3 Jupyter-themes&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;두 가지를 모두 해보았는데, 최종적으로는 dunovank의 theme가 설치도 쉽고 색상 등에 있어서 더 가독성이 좋다는 생각이 들었다.&lt;/p&gt; &lt;h2 id=&quot;section&quot;&gt;설치&lt;/h2&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;pip install git+https://github.com/dunovank/jupyter-themes.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;그러면 &lt;strong&gt;jupyter-theme&lt;/strong&gt;가 설치되고...</description>
+        <pubDate>Tue, 08 Mar 2016 09:20:00 +0900</pubDate>
+        <link>/jupyter/theme/2016/03/08/jupyter-theme.html</link>
+        <guid isPermaLink="true">/jupyter/theme/2016/03/08/jupyter-theme.html</guid>
+        
+        
+        <category>Jupyter</category>
+        
+        <category>theme</category>
+        
+      </item>
+    
+      <item>
+        <title>Jupyter 환경 구성</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://jupyter.org&quot;&gt;Jupyter&lt;/a&gt;는 웹 브라우저를 기반으로 상호작용이 가능한 프로그래밍을 할 수 있는 환경을 제공한다. 즉, 기존의 대부분의 프로그래밍 방식이 ‘편집-컴파일-실행’의 순서로 개발을 해왔다면, ‘실행-확인’으로 프로그래밍 절차를 바꿔준다. Jupyter를 이용한 개발 환경은 완전히 독립적인 프로그램을 개발하기 전에, 알고리즘을 개발하거나 데이터 분석 등 하나의 기능을 개발하는데 생산성을 높여준다. 특히 이미지, 그래프, 출력화면 등을 코드와 같이 화면에 보여주므로 그 자체 만으로도 충분한 문서가 된다.&lt;/p&gt; &lt;p&gt;Jupyter는 ipython에서 출발한 프로젝트이며, Jupyter는 ipython 4.0이후의 버전을 의미한다. 하지만 ipython이라는 이름을 버리고, juptyer라는 이름을 변경할 정도로 큰 변화가 있었는데, 그것은 다양한 언어를 지원할 수 있게 되었다는 점이다. Jupyter로 하여금 어떤 언어를 지원하고자 한다면 개발 환경과 함께 kernel을 설치 해야만...</description>
+        <pubDate>Tue, 08 Mar 2016 09:10:00 +0900</pubDate>
+        <link>/jupyter/ipython/2016/03/08/jupyter.html</link>
+        <guid isPermaLink="true">/jupyter/ipython/2016/03/08/jupyter.html</guid>
+        
+        <category>Jupyter</category>
+        
+        
+        <category>Jupyter</category>
+        
+        <category>ipython</category>
+        
+      </item>
+    
+  </channel>
+</rss>

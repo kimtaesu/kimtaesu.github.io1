@@ -1,0 +1,329 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/** Variables **********************************************/
+$base-font-family:              Helvetica, sans-serif;
+$base-line-height:              1.5em;
+$horizontal-spacing-unit:       50px;
+$vertical-spacing-unit:         40px;
+$nav-height:                    56px;
+
+/* portfolio tinkering */
+$img_spacing: 5px; 
+$img_height: 275px;
+$caption_font_size: 12px;
+$caption_color: #aaa;
+
+/* COLORS  */
+$red:  #FF3636;
+$orange: #F29105;
+$blue: #2698BA;
+$green: #11D68B;
+$lime_green: #B7D12A;
+$purple: #B509AC;
+
+
+$grey-color-dark: #333;   /* footer */
+$grey-color-light: #ddd;  /* navigation bar border */
+$text-color:     #666;
+
+/* Set theme color *************************/
+$theme-color:   $lime_green;
+
+
+/************************************************************/
+
+/**
+ * Basic styling
+ */
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 100;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $vertical-spacing-unit / 2;
+}
+
+.alignright {
+    float: right;
+}
+
+
+hr{
+    /* Inset, by Dan Eden */
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  text-align: center
+}
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $horizontal-spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+}
+
+
+/**
+ * Links
+ */
+a {
+    color: $text-color;
+    text-decoration: none;
+    /*
+    &:visited {
+        color: darken($brand-color, 15%); 
+    }
+    */
+    &:hover {
+        color: $theme-color;
+        text-decoration: none;
+    }
+}
+
+article a {
+    color: $theme-color;
+    font-weight: 100;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: $text-color;
+    border-left: 10px solid $grey-color-light;
+    padding-left: $horizontal-spacing-unit / 2;
+    font-size: 18px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: $grey-color-light;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+
+/**
+ * Wrapper
+ */ 
+
+.wrapper {
+    max-width: -webkit-calc(800px - (#{$horizontal-spacing-unit} * 2));
+    max-width:         calc(800px - (#{$horizontal-spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $horizontal-spacing-unit;
+    padding-left: $horizontal-spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(800px - (#{$horizontal-spacing-unit}));
+        max-width:         calc(800px - (#{$horizontal-spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+/**
+ * Icons
+ */
+.icons-home {
+    margin: .625rem 0;
+    padding: auto 0;
+}
+.icons-home a {
+  display:inline-block;padding:.5rem;margin:0.5rem;border-radius:0%;border:.125rem solid $text-color;line-height:0;transition:all .7s;
+}
+.icons-home a .icon {
+  fill: $text-color;width:32px;height:32px;transition:all .7s;
+}
+@media only screen and (min-width:37.5rem) {
+  .icons-home a {
+    text-align:center;
+  }
+  .icons-home a .icon {
+    width:32px;height:32px;
+  }
+}
+.icons-home a:hover {
+  background:#fff;
+  border: .125rem solid $theme-color;
+}
+.icons-home a:hover .icon {
+  fill: $theme-color;
+}
+.img-rounded {
+  border-radius:50%
+}
+
+/**
+ * Social Share
+ */
+.share {
+  *zoom:1;width:auto;max-width:50rem;float:none;display:block;margin-right:auto;margin-left:auto;padding-left:0;padding-right:0;text-align:center;border-top:1px solid #f2f2f2;padding-top:1.25rem;
+  background-color: #fff;  
+}
+.share:before,.share:after {
+  content:'';display:table
+}
+.share:after {
+  clear:both
+}
+.share svg {
+  margin:.938rem;width:25px;height:25px
+}
+.share a {
+  text-decoration:none;
+}
+.share a:hover svg {
+  fill:#4682B4
+}
+
+/**
+ * Table
+ */
+
+table {
+  margin: 1.25rem auto;
+  border-collapse:collapse;
+  border-spacing:0;
+}
+table td {
+  padding:.313rem .6rem;
+  border-bottom:1px solid #ccc;
+}
+table th {
+  padding:.313rem;
+  border-bottom: 3px solid #ccc;
+//  background-color: #97C4E6;
+}
+
+/**
+ * Code Table
+ */
+.highlight tbody th, .highlight tbody td
+{
+  border: none;
+  margin: 0;
+  
+}
+.highlight code table {
+  margin: 0 auto 0 0;
+}
+
+/**
+ * Internal Link
+ */
+a.anckor {
+  display: block;
+  position: relative;
+  top: -65px;
+  visibility: hidden;
+}
+
+.center {
+  display: block; 
+  margin: 0 auto;
+}
