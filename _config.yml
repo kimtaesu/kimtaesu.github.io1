@@ -14,12 +14,12 @@ markdown: kramdown
 highlighter: rouge
 
 # Pagination
-gems: ['jekyll-paginate', 'jekyll-mermaid']
+gems: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-assets', 'jekyll-toc']
 paginate: 15
 paginate_path: "/blog/page:num/"
 mermaid:
   src: '/scripts/mermaid.js'
-
+  src_config: '/js/mermaid_config.js'
 
 collections:
 #  cuda:
