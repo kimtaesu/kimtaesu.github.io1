@@ -1,12 +1,12 @@
 ---
 layout: page
-permalink: /metal/
-title: Machine Learning
-description: Let the Metal work
+permalink: /self-improvement/
+title: Self-Improve
+
 ---
 
 <ul class="post-list">
-{% for post in site.metal reversed %}
+{% for post in site.self-improvement reversed %}
     <li>
       <h2><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
       <p class="post-meta">{{ post.description }}</p>

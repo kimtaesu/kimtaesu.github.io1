@@ -1,0 +1,26 @@
+# Created by .ignore support plugin (hsz.mobi)
+_
+.gradle/
+.idea/
+.sass-cache/5895ef90ac4eac31521d22e16961274c6febeaa4/
+_site/README.md
+_site/about/
+_site/css/
+_site/cuda/
+_site/feed.xml
+_site/gradle/
+_site/gradlew
+_site/gradlew.bat
+_site/images/
+_site/img/
+_site/index.html
+_site/jupyter/
+_site/kimtaesu.github.io.iml
+_site/metal/
+_site/portfolio/
+_site/scripts/
+_site/self-improvement/
+gradle/
+gradlew
+gradlew.bat
+kimtaesu.github.io.iml

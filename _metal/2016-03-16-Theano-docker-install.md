@@ -75,7 +75,7 @@ endif
 NV_DOCKER ?= docker
 
 OS ?= debian
-USERNAME ?= hanjack
+USERNAME ?= kimtaesu
 WITH_PUSH_SUFFIX ?= 0
 ifeq ($(WITH_PUSH_SUFFIX), 1)
   PUSH_SUFFIX := -$(subst -,,$(OS))
@@ -106,7 +106,7 @@ docker build -t metal/cuda . # 마지막 점은 Dockerfile이 있는 경로
 
 {% highlight shell %}
 FROM nvdocker-build
-MAINTAINER hanjack
+MAINTAINER kimtaesu
 
 LABEL Description="This image is the base of python and octave app" Vendor="LucidMind Ltd." Version="1.0"
 
@@ -179,11 +179,11 @@ CMD ["/bin/zsh"]
 <a id="theano-install"> </a>
 
 {% highlight shell %}
-# Copyright (c) hanjack's LucidMind Project
+# Copyright (c) kimtaesu's LucidMind Project
 # Distributed under the terms of the Modified BSD License.
 
 FROM metal/cuda
-MAINTAINER hanjack <haanjack@gmail.com>
+MAINTAINER kimtaesu <haanjack@gmail.com>
 
 LABEL Description="This image is the base of python and octave app" Vendor="LucidMind Ltd." Version="1.0"
 
