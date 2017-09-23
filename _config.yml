@@ -19,7 +19,6 @@ paginate: 15
 paginate_path: "/blog/page:num/"
 mermaid:
   src: '/scripts/mermaid.js'
-  src_config: '/js/mermaid_config.js'
 
 collections:
 #  cuda:
