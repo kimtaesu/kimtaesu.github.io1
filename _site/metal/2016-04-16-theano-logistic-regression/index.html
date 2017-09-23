@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-04-16-theano-logistic-regression/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-04-16-theano-logistic-regression/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -89,12 +93,12 @@
   </header>
 
   <article class="post-content">
-    <h1 id="theano-logistic-regression-">Theano Logistic Regression 구현</h1>
+    <h1 id="theano-logistic-regression-구현">Theano Logistic Regression 구현</h1>
 
 <p>Classification의 대표적인 예제인 MNIST를 통해서 Theano에서 구현하는 Logistic Regression을 살펴보자.
 내용을 따라가다보면 Machine Learning의 어떻게 녹아들어가 있는지 살펴볼 수 있다.</p>
 
-<h2 id="section">라이브러리 로드</h2>
+<h2 id="라이브러리-로드">라이브러리 로드</h2>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 
@@ -111,15 +115,17 @@
 <span class="kn">import</span> <span class="nn">theano</span>
 <span class="kn">import</span> <span class="nn">theano.tensor</span> <span class="kn">as</span> <span class="nn">T</span></code></pre></figure>
 
-<p>이번 예제에서는 위와 같은 library가 사용된다.
-* pickle: 소스 데이터로 mnist의 pickled data를 사용한다.
-* timeit: 함수의 동작시간을 측정하기 위해 사용된다.
-* numpy: Theano에 데이터를 입출력하기 위해서 필요하다.
-* teano, theano.tensor: Machine learning algorithm</p>
+<p>이번 예제에서는 위와 같은 library가 사용된다.</p>
+<ul>
+  <li>pickle: 소스 데이터로 mnist의 pickled data를 사용한다.</li>
+  <li>timeit: 함수의 동작시간을 측정하기 위해 사용된다.</li>
+  <li>numpy: Theano에 데이터를 입출력하기 위해서 필요하다.</li>
+  <li>teano, theano.tensor: Machine learning algorithm</li>
+</ul>
 
-<h2 id="theano--deep-learning-machine-learning-">Theano를 사용한 Deep Learning과 Machine Learning의 차이</h2>
+<h2 id="theano를-사용한-deep-learning과-machine-learning의-차이">Theano를 사용한 Deep Learning과 Machine Learning의 차이</h2>
 
-<h3 id="machine-learning-">Machine Learning 절차</h3>
+<h3 id="machine-learning-절차">Machine Learning 절차</h3>
 <ol>
   <li>
     <p>Hypothesis Function
@@ -146,7 +152,7 @@
   </li>
 </ol>
 
-<h3 id="deep-learning-">Deep Learning 절차</h3>
+<h3 id="deep-learning-절차">Deep Learning 절차</h3>
 
 <ol>
   <li>Softmax regression
@@ -176,11 +182,11 @@
   </li>
 </ol>
 
-<h2 id="logisticregression--">LogisticRegression 클래스 구현</h2>
+<h2 id="logisticregression-클래스-구현">LogisticRegression 클래스 구현</h2>
 
 <p>Logistic Regression을 수행하기 위한 Softmax Regression에 사용할 파라미터 및 함수로 구성된 Class를 생성한다.</p>
 
-<h3 id="section-1">파라미터 구성</h3>
+<h3 id="파라미터-구성">파라미터 구성</h3>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">LogisticRegression</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">n_in</span><span class="p">,</span> <span class="n">n_out</span><span class="p">):</span>
@@ -217,7 +223,7 @@
   <span class="c"># keep track of model input</span>
   <span class="bp">self</span><span class="o">.</span><span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span></code></pre></figure>
 
-<h3 id="loss-">Loss 함수</h3>
+<h3 id="loss-함수">Loss 함수</h3>
 <p>문서에서 보면, ‘multi-class logistic regression에서 negative log-likelihood를 주로 사용한다’고 되어 있다. 이유는 안 써있다…;;</p>
 
 <p>나는 <strong>negative log-likelihood</strong>도 모르니까 적당히 넘어가지 말고 찾아보기로 했다.
@@ -279,7 +285,7 @@ likelihood는 조건부 확률을 의미하며 다음식과 같이 구성된다.
   <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="nb">NotImplementedError</span><span class="p">()</span></code></pre></figure>
 
-<h3 id="logisticregression-class-">LogisticRegression Class의 초기화</h3>
+<h3 id="logisticregression-class의-초기화">LogisticRegression Class의 초기화</h3>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">'x'</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
@@ -620,15 +626,15 @@ MNIST의 데이터는 $28 \times 28$ 크기의 이미지이며, 손으로 쓰여
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-04-16-theano-logistic-regression/%20via%20&#64;haanjack&hashtags=DeepLearning,Classification,Theano,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-04-16-theano-logistic-regression/%20via%20&#64;&hashtags=DeepLearning,Classification,Theano,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-04-16-theano-logistic-regression/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-04-16-theano-logistic-regression/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-04-16-theano-logistic-regression/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-04-16-theano-logistic-regression/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -643,7 +649,7 @@ MNIST의 데이터는 $28 \times 28$ 크기의 이미지이며, 손으로 쓰여
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-04-16-theano-logistic-regression/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

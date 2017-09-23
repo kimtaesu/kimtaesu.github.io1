@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/jupyter/ipython/2016/03/08/jupyter.html">
+    <link rel="canonical" href="http://localhost:4000/jupyter/ipython/2016/03/08/jupyter.html">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -93,52 +97,54 @@
 
 <p>Jupyter는 ipython에서 출발한 프로젝트이며, Jupyter는 ipython 4.0이후의 버전을 의미한다. 하지만 ipython이라는 이름을 버리고, juptyer라는 이름을 변경할 정도로 큰 변화가 있었는데, 그것은 다양한 언어를 지원할 수 있게 되었다는 점이다. Jupyter로 하여금 어떤 언어를 지원하고자 한다면 개발 환경과 함께 kernel을 설치 해야만 한다.</p>
 
-<h3 id="jupyter---">Jupyter에서 개발 언어 지원</h3>
+<h3 id="jupyter에서-개발-언어-지원">Jupyter에서 개발 언어 지원</h3>
 <p>Jupter에서 지원하는 언어 목록은 다음과 같은 명령으로 확인할 수 있다.
-내 경우에는 당장 공부하고 있는 언어를 우선 설치했기에 다음처럼 나온다.
-<code class="highlighter-rouge">
-$ jupyter kernelspec list
+내 경우에는 당장 공부하고 있는 언어를 우선 설치했기에 다음처럼 나온다.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ jupyter kernelspec list
 Available kernels:
   octave     /usr/local/share/jupyter/kernels/
   python2    /usr/local/share/jupyter/kernels/python2
-</code></p>
+</code></pre>
+</div>
 
-<h4 id="python--">Python 커널 설치</h4>
-<p>Python의 경우에는 커널을 별도로 받아서 설치할 필요없이 다음과 같은 명령으로 쉽게 설치할 수 있다.
-<code class="highlighter-rouge">
-$ jupyter kernelspec install-self
-</code></p>
+<h4 id="python-커널-설치">Python 커널 설치</h4>
+<p>Python의 경우에는 커널을 별도로 받아서 설치할 필요없이 다음과 같은 명령으로 쉽게 설치할 수 있다.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ jupyter kernelspec install-self
+</code></pre>
+</div>
 
-<h4 id="octave--">octave 커널 설치</h4>
+<h4 id="octave-커널-설치">octave 커널 설치</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>$ python -m octave_kernel.install
 </code></pre>
 </div>
 <p>물론 여기서 이 명령을 사용하려면 python 2.7이 설치되어 있어야 한다. python3을 기본으로 사용한다면 python3를 사용해야 한다.</p>
 
-<h4 id="section">더 많은 언어 지원</h4>
+<h4 id="더-많은-언어-지원">더 많은 언어 지원</h4>
 <p>실제 Jupyter는 이 외에도 더 많은 언어를 지원할 수 있으며, <a href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages">Jupyter에서 지원하는 언어 목록</a>을 확인하면 커널 목록 및 설치 방법을 알 수 있다.
-Debian/Ubuntu를 이용하고 있다면 위 링크에서 설명한 방법을 사용할 수도 있다. 최신 Ubuntu만 된다고 되어 있는데, 글쎄…
-<code class="highlighter-rouge">
-$ sudo add-apt-repository ppa:chronitis/jupyter
+Debian/Ubuntu를 이용하고 있다면 위 링크에서 설명한 방법을 사용할 수도 있다. 최신 Ubuntu만 된다고 되어 있는데, 글쎄…</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo add-apt-repository ppa:chronitis/jupyter
 $ sudo apt update
 $ sudo apt install &lt;kernelname&gt;
-</code></p>
+</code></pre>
+</div>
 
-<h3 id="jupyter-profile-">Jupyter Profile 생성</h3>
-<p>jupyter의 profile을 생성해서 profile 별로 다른 설정을 하도록 할 수 있다. 기본적으로는 다음과 같이 입력한다.
-<code class="highlighter-rouge">
-$ ipython profile create notebook
-</code>
-그러면 <code class="highlighter-rouge">/home/&lt;user&gt;/.ipython/profile_notebook/</code> 디렉토리가 생성되며, 그 안에 <code class="highlighter-rouge">ipython_kernel_config.py</code>가 생성된다. 왜 여기서 뜬금없이 ipython인지는 잘 모르겠지만, 서서히 넘어가고 있는 과정 중에 남아 있는 것이란 생각이 든다.</p>
+<h3 id="jupyter-profile-생성">Jupyter Profile 생성</h3>
+<p>jupyter의 profile을 생성해서 profile 별로 다른 설정을 하도록 할 수 있다. 기본적으로는 다음과 같이 입력한다.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ipython profile create notebook
+</code></pre>
+</div>
+<p>그러면 <code class="highlighter-rouge">/home/&lt;user&gt;/.ipython/profile_notebook/</code> 디렉토리가 생성되며, 그 안에 <code class="highlighter-rouge">ipython_kernel_config.py</code>가 생성된다. 왜 여기서 뜬금없이 ipython인지는 잘 모르겠지만, 서서히 넘어가고 있는 과정 중에 남아 있는 것이란 생각이 든다.</p>
 
-<p>이 파일을 편집해서 다음과 같은 것들을 할 수 있다.
-1. 패스워드로 notebook 잠금
-1. 접속하는 주소, 포트 제한, 인증키 설정
-1. 기타 환경변수 설정 등</p>
+<p>이 파일을 편집해서 다음과 같은 것들을 할 수 있다.</p>
+<ol>
+  <li>패스워드로 notebook 잠금</li>
+  <li>접속하는 주소, 포트 제한, 인증키 설정</li>
+  <li>기타 환경변수 설정 등</li>
+</ol>
 
 <p>서버에 설치하고 일부 사람들에게만 공유한다거나 혼자 사용하겠다면 필요한 기능일 것이다. 다만 jupyter 자체는 사용자 관리 기능이 없이 노트기능만을 제공한다는 것을 염두에 두자.</p>
 
-<h3 id="jupyter-">Jupyter 실행</h3>
+<h3 id="jupyter-실행">Jupyter 실행</h3>
 
 <p>기본적인 실행 명령은 다음과 같다.</p>
 
@@ -146,7 +152,7 @@ $ ipython profile create notebook
 
 <p>그럼 웹 브라우저에서 <code class="highlighter-rouge">http://localhost:8888</code>을 주소로 해서 jupyter 창을 열어준다.</p>
 
-<h4 id="section-1">주요 옵션</h4>
+<h4 id="주요-옵션">주요 옵션</h4>
 <ol>
   <li>웹 브라우저 자동실행 방지</li>
 </ol>
@@ -171,7 +177,7 @@ $ ipython profile create notebook
 
 <p>jupyter는 기본적으로 실행된 위치를 기준으로 디렉토리 구조를 보여주는데, 이를 사용자가 주로 작업하는 디렉토리를 지정해서 실행위치와 상관없이 jupyter를 띄울 수 있다.</p>
 
-<h3 id="section-2">첨언</h3>
+<h3 id="첨언">첨언</h3>
 
 <ol>
   <li>
@@ -196,15 +202,15 @@ docker에서 실행할때, jupyter는 docker 내에서 실행해야 하며, <cod
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/jupyter/ipython/2016/03/08/jupyter.html%20via%20&#64;haanjack&hashtags=Jupyter,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/jupyter/ipython/2016/03/08/jupyter.html%20via%20&#64;&hashtags=Jupyter,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/jupyter/ipython/2016/03/08/jupyter.html"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/jupyter/ipython/2016/03/08/jupyter.html"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/jupyter/ipython/2016/03/08/jupyter.html"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/jupyter/ipython/2016/03/08/jupyter.html"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -219,7 +225,7 @@ docker에서 실행할때, jupyter는 docker 내에서 실행해야 하며, <cod
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/jupyter/ipython/2016/03/08/jupyter.html';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

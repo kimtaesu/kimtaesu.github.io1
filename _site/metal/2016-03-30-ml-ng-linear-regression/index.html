@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-03-30-ml-ng-linear-regression/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-03-30-ml-ng-linear-regression/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -91,9 +95,9 @@
   <article class="post-content">
     <h1 id="linear-regression">Linear Regression</h1>
 
-<h2 id="one-variable--linear-regression">변수 하나(one variable)에 대한 Linear Regression</h2>
+<h2 id="변수-하나one-variable에-대한-linear-regression">변수 하나(one variable)에 대한 Linear Regression</h2>
 
-<h3 id="section">모델</h3>
+<h3 id="모델">모델</h3>
 <p>앞서 설명한대로 <strong>Regression</strong> 문제는 연속적인 결화를 도출하는 함수에 대한 예측을 하는 문제이다. 여기서 살펴볼 문제는 변수 하나에 대한 Regression이므로 Univariate linear regression이라고도 불린다.</p>
 
 <p>단일 변수에 대한 Linear Regression은 하나의 입력값에 대한 하나의 출력을 특징인 예측을 하는 경우에 유용하다. 또한 Supervised Learning을 사용하는데, 이는 우리가 특정 입력에 대하여 어떤 결과가 나와야 하는지 알고 있기 때문이다.</p>
@@ -166,7 +170,7 @@
 
 <p>위에서 계산하는 값이 수렴하도록 해야한다.</p>
 
-<h3 id="gradient-descent-linear-regression-">Gradient Descent의 Linear Regression 적용</h3>
+<h3 id="gradient-descent의-linear-regression-적용">Gradient Descent의 Linear Regression 적용</h3>
 <p>결론적으로 cost function의 gradient를 갖고 어떻게 최적의 hypothesis function을 얻기 위해선 오차를 더 적게 gradient에 의한 결과를 cost function에 반영해야 한다.</p>
 
 <p>따라서 수렴할때까지 다음의 과정을 계속한다.</p>
@@ -179,9 +183,9 @@
 
 <p>결론적으로 위 과정(gradient descent)을 반복할수록 우리의 hypotheis function은 오차가 적어지고 정확해져갈 것이다.</p>
 
-<h2 id="multiple-variable--linear-regression">여러개의 변수(Multiple Variable)에 대한 Linear Regression</h2>
+<h2 id="여러개의-변수multiple-variable에-대한-linear-regression">여러개의 변수(Multiple Variable)에 대한 Linear Regression</h2>
 
-<h3 id="section-1">모델</h3>
+<h3 id="모델-1">모델</h3>
 <p>앞서 설명한 Linear Regression은 단일 변수(x)에 대한 regression으로서 1차 hypothesis function을 찾는 것에 대해 알아보았다. 그렇다면 여러개의 변수가 주어질 때에는 어떻게 하는 것인지 알아보기로 하자.</p>
 
 <p>예를 들어, 집의 가격과 집의 크기 간의 관계를 살펴보았던 과거의 경우를 살펴보자.</p>
@@ -278,15 +282,15 @@
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-03-30-ml-ng-linear-regression/%20via%20&#64;haanjack&hashtags=Machine Learning,Linear Regression,Coursera,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-03-30-ml-ng-linear-regression/%20via%20&#64;&hashtags=Machine Learning,Linear Regression,Coursera,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-03-30-ml-ng-linear-regression/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-03-30-ml-ng-linear-regression/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-03-30-ml-ng-linear-regression/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-03-30-ml-ng-linear-regression/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -301,7 +305,7 @@
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-03-30-ml-ng-linear-regression/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

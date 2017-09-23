@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-05-02-docker/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-05-02-docker/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -68,6 +68,10 @@
         
           
           <a class="page-link" href="/portfolio/">Gallery</a>
+          
+        
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
           
         
 
@@ -97,7 +101,7 @@
 
 <p>먼저 Deep Learning을 위해서 CUDA가 설치된 Linux 환경을 이용할 것이다. 없다면 CUDA가 가능한 container를 가져오는 절차를 건너뛰어도 무방하다. Linux에서 CUDA 환경이 구축되지 않았다면, <a href="/cuda/2016-02-29-cuda-linux/">Linux 환경에서 CUDA 개발환경 구축</a> 문서를 참조하자.</p>
 
-<h1 id="docker--debianubuntu">Docker 설치 (Debian/Ubuntu)</h1>
+<h1 id="docker-설치-debianubuntu">Docker 설치 (Debian/Ubuntu)</h1>
 
 <p><a href="https://docs.docker.com/engine/installation/linux/debian/">Docker Document</a>에 있는 것을 참조하였다. 다른 리눅스 버전이라도 링크된 문서를 따라가 해당 내용을 참고하면 된다.</p>
 
@@ -117,7 +121,7 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade</code></pre></figure>
 
-<h2 id="docker-">Docker 설치</h2>
+<h2 id="docker-설치">Docker 설치</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo apt-get install docker-engine</code></pre></figure>
 
@@ -127,9 +131,9 @@
 <span class="gp">$ </span>sudo gpasswd -a <span class="k">$(</span>USER<span class="k">)</span> docker
 <span class="gp">$ </span>sudo service docker restart</code></pre></figure>
 
-<h1 id="nvidia-cuda--">NVIDIA CUDA 이미지 설치</h1>
+<h1 id="nvidia-cuda-이미지-설치">NVIDIA CUDA 이미지 설치</h1>
 
-<h2 id="dockerfile-">Dockerfile 구성</h2>
+<h2 id="dockerfile-구성">Dockerfile 구성</h2>
 
 <p>Docker에서 CUDA를 이용하기 위해서는, Base가 되는 Linux 시스템 뿐만 아니라 Docker Image에서도 CUDA를 사용할 수 있어야 한다. Docker에서 CUDA를 사용할 수 있는 Dockerfile은 NVIDIA에서 공개한 <a href="https://github.com/NVIDIA/nvidia-docker">NVIDIA Docker</a>를 사용할 것이므로, 큰 어려움 없이 Image를 구성할 수 있다.</p>
 
@@ -140,7 +144,7 @@
 
 <p>만약 ubuntu를 그대로 이용하겠다면 다음 내용을 건너뛰고 Image Build로 넘어가면 된다.</p>
 
-<h2 id="debian--dockerfile-build--">Debian 기반 Dockerfile build 환경 구성</h2>
+<h2 id="debian-기반-dockerfile-build-환경-구성">Debian 기반 Dockerfile build 환경 구성</h2>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Ubuntu를 기준으로 Debian 기반 Dockerfile을 구성한다.</span>
 <span class="gp">$ </span>cp -R ubuntu-14.04 debian
@@ -149,7 +153,7 @@
 <span class="gp">$ </span><span class="nb">cd </span>nvidia-docker
 <span class="gp">$ </span>find ./debian -name <span class="s2">"Dockerfile"</span> -exec perl -pi -e <span class="s1">'s/ubuntu:14.04/debian:latest/g'</span> <span class="o">{}</span> <span class="se">\;</span></code></pre></figure>
 
-<h2 id="docker-image-">Docker Image 빌드</h2>
+<h2 id="docker-image-빌드">Docker Image 빌드</h2>
 
 <p><strong>nvidia-docker</strong> 디렉토리에서 진행한다.</p>
 
@@ -162,7 +166,7 @@ Makefile의 의존관계를 살펴보면 알겠지만, 위 옵션을 선택하�
 <p>build가 완료된다면 의존관계에 따라 복수의 image가 생성되는 것을 확인할 수 있다.
 <img class="col three" src="/images/201605/Docker%20images.png" /></p>
 
-<h2 id="docker-image--1">Docker Image 실행</h2>
+<h2 id="docker-image-실행">Docker Image 실행</h2>
 
 <p>내가 선호하는 Docker image의 실행구성은 다음과 같다.</p>
 
@@ -185,7 +189,7 @@ Makefile의 의존관계를 살펴보면 알겠지만, 위 옵션을 선택하�
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -p 8888:8888 -it -v <span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">:/workspace"</span> --rm metal/ml /bin/zsh</code></pre></figure>
 
-<h1 id="section">개발 환경 구성</h1>
+<h1 id="개발-환경-구성">개발 환경 구성</h1>
 
 <p>드디어 Deep Learning을 시험해 볼 수 있는 개발환경을 구축하는 단계로 왔다.</p>
 
@@ -207,7 +211,7 @@ Makefile의 의존관계를 살펴보면 알겠지만, 위 옵션을 선택하�
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker build -t metal/default .</code></pre></figure>
 
-<h3 id="docker--1">Docker 실행</h3>
+<h3 id="docker-실행">Docker 실행</h3>
 
 <p>컴파일이 완료되었다면 정상적으로 jupyter를 포함한 설치한 개발 환경이 잘 동작하는지 확인해보자.</p>
 
@@ -241,10 +245,10 @@ Makefile의 의존관계를 살펴보면 알겠지만, 위 옵션을 선택하�
 
 <p><br /></p>
 
-<h1 id="deep-learning-libary-">Deep Learning Libary 설치</h1>
+<h1 id="deep-learning-libary-설치">Deep Learning Libary 설치</h1>
 <p>이제 Deep Learning Library인 Theano와 Tensorflow를 설치해보자.</p>
 
-<h3 id="dockerfile--1">Dockerfile 생성</h3>
+<h3 id="dockerfile-생성">Dockerfile 생성</h3>
 
 <p>아래와 같이 Dockerfile을 생성한다.</p>
 
@@ -262,7 +266,7 @@ RUN aptitude install liblapack-dev libblas-dev gfortran --without-recommends -y 
     pip install --upgrade git+git://github.com/Theano/Theano.git <span class="o">&amp;&amp;</span><span class="se">\</span>
     theano-nose</code></pre></figure>
 
-<h3 id="docker-image---">Docker image 빌드 및 실행</h3>
+<h3 id="docker-image-빌드-및-실행">Docker image 빌드 및 실행</h3>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 빌드</span>
 <span class="gp">$ </span>docker build -t metal/ml .
@@ -276,15 +280,15 @@ RUN aptitude install liblapack-dev libblas-dev gfortran --without-recommends -y 
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-05-02-docker/%20via%20&#64;haanjack&hashtags=Docker,CUDA,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-05-02-docker/%20via%20&#64;&hashtags=Docker,CUDA,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-05-02-docker/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-05-02-docker/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-05-02-docker/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-05-02-docker/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -299,7 +303,7 @@ RUN aptitude install liblapack-dev libblas-dev gfortran --without-recommends -y 
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-05-02-docker/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

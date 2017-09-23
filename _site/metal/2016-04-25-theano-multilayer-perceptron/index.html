@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-04-25-theano-multilayer-perceptron/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-04-25-theano-multilayer-perceptron/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -68,6 +68,10 @@
         
           
           <a class="page-link" href="/portfolio/">Gallery</a>
+          
+        
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
           
         
 
@@ -117,7 +121,7 @@ hidden layer가 하나인 경우에 대하여 MLP를 표현한 예. 하나의 la
 
 <p>output vector는 $o(x) = G(b^{(2)} + W^{(2)} h(x))$의 연산을 통해 구할 수 있다. 이 연산은 앞서 다룬 MNIST Logistic Regression에서 사용하는 연산과 동일한 연산이며, activation 함수 $G$로는 $softmax$를 이용한다.</p>
 
-<h1 id="hidden-layer-class-">Hidden Layer Class 구성</h1>
+<h1 id="hidden-layer-class-구성">Hidden Layer Class 구성</h1>
 
 <p>MLP를 구성하는데 사용할 Hidden Layer를 구성하는데 코드를 재사용하기 위하여 Hidden Layer class를 구성한다.</p>
 
@@ -186,7 +190,7 @@ hidden layer가 하나인 경우에 대하여 MLP를 표현한 예. 하나의 la
   </tbody>
 </table>
 
-<h1 id="mlp-class-">MLP Class 구성</h1>
+<h1 id="mlp-class-구성">MLP Class 구성</h1>
 
 <p>이제 Hidden layer와 ouput layer를 묶어서 하나의 MLP로 구성할 것이다.
 output layer는 MNIST logistic regression과 동일한 구성을 갖는다. 이 예제는 하나의 hidden layer만을 사용하므로, MLP의 paramter 중 hidden layer의 unit의 수를 지정하는 <em>n_hidden</em>에 대해서도 하나만 존재한다. 이 부분에 대해서는, hidden layer가 여러개가 되었을 때엔 array로 지정할 수 있도록 변형 될 것이다.</p>
@@ -445,15 +449,15 @@ output layer는 MNIST logistic regression과 동일한 구성을 갖는다. 이 
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-04-25-theano-multilayer-perceptron/%20via%20&#64;haanjack&hashtags=DeepLearning,Neural Networks,Theano,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-04-25-theano-multilayer-perceptron/%20via%20&#64;&hashtags=DeepLearning,Neural Networks,Theano,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-04-25-theano-multilayer-perceptron/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-04-25-theano-multilayer-perceptron/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-04-25-theano-multilayer-perceptron/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-04-25-theano-multilayer-perceptron/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -468,7 +472,7 @@ output layer는 MNIST logistic regression과 동일한 구성을 갖는다. 이 
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-04-25-theano-multilayer-perceptron/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

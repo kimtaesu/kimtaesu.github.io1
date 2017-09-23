@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/cuda/2016-02-29-PyCUDA/">
+    <link rel="canonical" href="http://localhost:4000/cuda/2016-02-29-PyCUDA/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -92,9 +96,9 @@
     <p><a href="https://pypi.python.org/pypi/pycuda">PyCUDA</a>는 CUDA 가속을 Python 프로그램에서도 활용할 수 있도록 하기 위해서 만들어진 Python library이다. PyCUDA는 Python을 위한 CUDA Wrapper와 같은 것으로, Python으로 변형된 CUDA 프로그래밍 언어가 아니다. Python에서 CUDA를 이용하려면, 일반 C 모듈을 로딩하는 것과 같이 모듈화 부터 시작해주어야 하지만, PyCUDA를 이용한다면 그런 복잡한 절차 없이 곧바로 CUDA 프로그래밍을 할 수게 된다. 다만 CUDA C는 공부해야만 한다.
 [<a href="https://documen.tician.de/pycuda/">Document</a>]</p>
 
-<h3 id="section">설치</h3>
+<h3 id="설치">설치</h3>
 
-<h4 id="pycuda-">PyCUDA 다운로드</h4>
+<h4 id="pycuda-다운로드">PyCUDA 다운로드</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>git clone --recursive http://git.tiker.net/trees/pycuda.git
 cd pycuda
 </code></pre>
@@ -115,7 +119,7 @@ cd pycuda
   <li><a href="http://numpy.org/">Numpy</a> - <code class="highlighter-rouge">sudo pip install numpy</code></li>
 </ul>
 
-<h3 id="build--">Build 및 설치</h3>
+<h3 id="build-및-설치">Build 및 설치</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code>cd pycuda-VERSION
 ./configure.py --cuda-root=/usr/local/cuda --cudadrv-lib-dir=/usr/lib --boost-inc-dir=/usr/include --boost-lib-dir=/usr/lib --boost-python-libname=boost_python-py27 --boost-thread-libname=boost_thread
 make -j 4
@@ -138,9 +142,9 @@ root의 path를 수정해주어야 한다. 이전까지 ubuntu에 설정한 환�
 <span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="s2">"/usr/local/cuda/lib64"</span>
 <span class="nb">export </span><span class="nv">CUDA_INC_DIR</span><span class="o">=</span><span class="s2">"/usr/local/cuda/include"</span></code></pre></figure>
 
-<h3 id="tutorialhttpsdocumenticiandepycudatutorialhtml"><a href="https://documen.tician.de/pycuda/tutorial.html">Tutorial</a></h3>
+<h3 id="tutorial"><a href="https://documen.tician.de/pycuda/tutorial.html">Tutorial</a></h3>
 
-<h4 id="section-1">불러오기</h4>
+<h4 id="불러오기">불러오기</h4>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -179,7 +183,7 @@ numpy에서 버퍼를 만들고 그대로 가져오면 된다.</p>
 <span class="n">cuda</span><span class="o">.</span><span class="n">memcpy_dtoh</span><span class="p">(</span><span class="n">a_out</span><span class="p">,</span> <span class="n">a_d</span><span class="p">)</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<h4 id="kernel-">Kernel 실행하기</h4>
+<h4 id="kernel-실행하기">Kernel 실행하기</h4>
 <p>CUDA를 동작시키는 함수를 Kernel이라고 부른다. 보통 CUDA C에서는 <code class="highlighter-rouge">cu</code>파일에 kernel 코드를 작성하는데, PyCUDA에서는 그렇게 할 필요없이 Python 파일에 코드를 추가할 수 있다. 다만 Python 파일에 있다고, Kernel 함수의 언어도 Python이 되는 것은 아니고, 이 부분에 대해서는 CUDA C 코드를 작성해야 한다.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
@@ -206,7 +210,7 @@ numpy에서 버퍼를 만들고 그대로 가져오면 된다.</p>
 <span class="n">func</span><span class="p">(</span><span class="n">a_d</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<h4 id="section-2">단순한 버전</h4>
+<h4 id="단순한-버전">단순한 버전</h4>
 <p>PyCUDA는 데이터 복사하는 부분에 대하여 보다 단순한 방법을 제공하는데, 지금까지 Tutorial에서 설명한 내용을 다음과 같이 요약할 수 있다.</p>
 
 <p>이렇게 메모리를 할당하고 복사하고 했던 과정을,</p>
@@ -360,15 +364,15 @@ __global__ void multiply_them(float *dest, float *a, float *b)
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/cuda/2016-02-29-PyCUDA/%20via%20&#64;haanjack&hashtags=CUDA,Python,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/cuda/2016-02-29-PyCUDA/%20via%20&#64;&hashtags=CUDA,Python,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/cuda/2016-02-29-PyCUDA/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cuda/2016-02-29-PyCUDA/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/cuda/2016-02-29-PyCUDA/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/cuda/2016-02-29-PyCUDA/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -383,7 +387,7 @@ __global__ void multiply_them(float *dest, float *a, float *b)
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/cuda/2016-02-29-PyCUDA/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

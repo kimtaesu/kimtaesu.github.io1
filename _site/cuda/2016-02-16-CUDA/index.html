@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/cuda/2016-02-16-CUDA/">
+    <link rel="canonical" href="http://localhost:4000/cuda/2016-02-16-CUDA/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -89,7 +93,7 @@
   </header>
 
   <article class="post-content">
-    <h3 id="cuda--">CUDA 프로그래밍의 시작</h3>
+    <h3 id="cuda-프로그래밍의-시작">CUDA 프로그래밍의 시작</h3>
 <p>CUDA 프로그래밍의 개념을 접할 수 있도록 간단하게 CUDA 프로그램을 만들어보도록 하겠습니다.
 수행할 내용은 다음과 같습니다.</p>
 
@@ -175,15 +179,17 @@
 
 <p>원래 하려는 동작에 비해서 코드가 많이 늘어나게 되었는데, 그것은 CUDA가 동작하기 위해서 필요한 자원들을 할당하는 절차들이 코드로 들어가서 그렇습니다.</p>
 
-<p>그 차이점은 다음과 같습니다.
-1. CUDA 메모리를 할당하고 해제한다.
-1. CUDA 메모리에 데이터를 복사해야 한다.
-1. CPU에서 For 문제 의해 했던 것을 cuda thread 수로 계산을 해야한다.
-1. CUDA에서는 __global__이라는 키워드가 붙은 함수로 CUDA 연산을 구동시킨다.</p>
+<p>그 차이점은 다음과 같습니다.</p>
+<ol>
+  <li>CUDA 메모리를 할당하고 해제한다.</li>
+  <li>CUDA 메모리에 데이터를 복사해야 한다.</li>
+  <li>CPU에서 For 문제 의해 했던 것을 cuda thread 수로 계산을 해야한다.</li>
+  <li>CUDA에서는 __global__이라는 키워드가 붙은 함수로 CUDA 연산을 구동시킨다.</li>
+</ol>
 
 <p>자세한 문법은 다음에 설명하기로 하겠습니다. 다만 GPU연산을 한다는 것이 어떤 절차들이 들어가게 되는지만 이애하시면 됩니다.</p>
 
-<h3 id="section">동작 원리</h3>
+<h3 id="동작-원리">동작 원리</h3>
 <p><a href="https://en.wikipedia.org/wiki/CUDA#/media/File:CUDA_processing_flow_(En).PNG"><img src="/images//RTC08-ERTW-Nvidia-FigX_original_large.jpg" alt="" /></a></p>
 
 <p>설명이 잘 되어 있는 페이지가 있어서 위 그림에 링크를 했습니다.
@@ -201,15 +207,15 @@ CPU와 CUDA의 동작의 차이점 중에서 4번이 ‘CUDA 연산을 구동시
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/cuda/2016-02-16-CUDA/%20via%20&#64;haanjack&hashtags=CUDA,GPGPU,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/cuda/2016-02-16-CUDA/%20via%20&#64;&hashtags=CUDA,GPGPU,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/cuda/2016-02-16-CUDA/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cuda/2016-02-16-CUDA/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/cuda/2016-02-16-CUDA/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/cuda/2016-02-16-CUDA/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -224,7 +230,7 @@ CPU와 CUDA의 동작의 차이점 중에서 4번이 ‘CUDA 연산을 구동시
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/cuda/2016-02-16-CUDA/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

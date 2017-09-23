@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-02-29-theano-install/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-02-29-theano-install/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -89,17 +93,17 @@
   </header>
 
   <article class="post-content">
-    <h1 id="theano-">Theano 시작하기</h1>
+    <h1 id="theano-시작하기">Theano 시작하기</h1>
 
-<h2 id="section">설치</h2>
+<h2 id="설치">설치</h2>
 <p>언제나 그렇듯 설치는 무엇을 배우는데 있어서 쉬운 편이다.</p>
 
-<h4 id="section-1">사전에 설치해야 하는 것</h4>
+<h4 id="사전에-설치해야-하는-것">사전에 설치해야 하는 것</h4>
 <p>python, python, python-dev, NumPy, SciPy, nose, sphinx, pip, pydot</p>
 
 <p>나는 <a href="">conda</a>를 설치해서 한번에 끝냈다. 가급적 직접 설치해서 쓰고 싶은데, 기본적으로 깔린 python2.7을 어찌할수가 없어서 이 편이 훨씬 건강에 좋은것 같다.</p>
 
-<h3 id="section-2">설치 명령</h3>
+<h3 id="설치-명령">설치 명령</h3>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">pip install Theano</code></pre></figure>
 
@@ -107,7 +111,7 @@
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git</code></pre></figure>
 
-<h3 id="cuda-">CUDA 설정하기</h3>
+<h3 id="cuda-설정하기">CUDA 설정하기</h3>
 <p>Theano가 GPU를 쓸 수 있도록 하기 위해서는 <code class="highlighter-rouge">CUDA_ROOT=/usr/local/cuda-7.5/</code>를 <strong>.bashrc</strong>같은 데에 추가해줘야 한다.
 (Linux에서 CUDA를 설치하는 방법은 다른 <a href="http://localhost:4000/cuda/2016-02-29-cuda-linux/">문서</a>를 참조하자)</p>
 
@@ -118,7 +122,7 @@
 device = gpu
 floatX = float32'</span> &gt; ~/.theanorc</code></pre></figure>
 
-<h3 id="section-3">설치 확인</h3>
+<h3 id="설치-확인">설치 확인</h3>
 
 <p><a href="http://deeplearning.net/software/theano/tutorial/using_gpu.html#testing-theano-with-gpu">Theano 설치 문서</a>안내에 따라 다음의 내용을 가진 파일을 만든다.</p>
 
@@ -155,15 +159,15 @@ floatX = float32'</span> &gt; ~/.theanorc</code></pre></figure>
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-02-29-theano-install/%20via%20&#64;haanjack&hashtags="
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-02-29-theano-install/%20via%20&#64;&hashtags="
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-02-29-theano-install/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-02-29-theano-install/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-02-29-theano-install/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-02-29-theano-install/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -178,7 +182,7 @@ floatX = float32'</span> &gt; ~/.theanorc</code></pre></figure>
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-02-29-theano-install/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

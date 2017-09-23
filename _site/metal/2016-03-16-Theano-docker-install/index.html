@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-03-16-Theano-docker-install/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-03-16-Theano-docker-install/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -93,13 +97,13 @@
 
 <p>Theano는 Machine Learning에 필요한 알고리즘을 제공하는 Python Library이다. University fo Montreal에서 주도적으로 개발 하고 있으며, 라이브러리에서 제공하는 알고리즘의 상세한 설명은 Yoshua Bengio 교수가 쓰고 있는 책에서 볼 수 있다. 코드가 오픈되어 있고 GPU 프로그래밍까지 다룰 수 있고 문서도 잘 되어 있어서, 좋은 공부용 라이브러리라고 할 수 있다. 다만, 머신러닝 스터디 중간에 들아가다보니 내용을 쉽게 따라 잡고 있지 못하고는 있는데, 해당 내용에 대해서는 Theano의 Deep Learning Tutorial을 우선 해보고 진입할 생각이다.</p>
 
-<h2 id="section">개발 환경 준비</h2>
+<h2 id="개발-환경-준비">개발 환경 준비</h2>
 
 <p>우선 Theano를 해보기 위해서는 Theano를 개발환경에 설치해야 한다. 우선 나는 windows를 은행을 위해서만 사용하므로 개발환경에 대한 논의에서 제외한다.</p>
 
 <p>나는 기존에 Dockerfile로 개발환경을 준비해 두었고, 이글을 보시는 분들도 하나의 설치 사례로 참고해 두어도 좋을 것이라고 생각한다. 다만 이런 모든 과정이 귀찮고 바로 넘어가고자 하는 경우에는 다양한 Dockerfile을 가진 Kaixhin의 Github 저장소에서 필요한 Dockerfile을 가져오면 된다.</p>
 
-<h2 id="gpucuda--">GPU(CUDA)를 사용하는 경우</h2>
+<h2 id="gpucuda를-사용하는-경우">GPU(CUDA)를 사용하는 경우</h2>
 
 <blockquote>
   <p>필요한것</p>
@@ -152,7 +156,7 @@ endif
 NV_DOCKER ?<span class="o">=</span> docker
 
 OS ?<span class="o">=</span> debian
-USERNAME ?<span class="o">=</span> hanjack
+USERNAME ?<span class="o">=</span> kimtaesu
 WITH_PUSH_SUFFIX ?<span class="o">=</span> 0
 ifeq <span class="o">(</span><span class="k">$(</span>WITH_PUSH_SUFFIX<span class="k">)</span>, 1<span class="o">)</span>
   PUSH_SUFFIX :<span class="o">=</span> -<span class="k">$(</span>subst -,,<span class="k">$(</span>OS<span class="k">))</span>
@@ -181,7 +185,7 @@ docker에 사용자를 추가하려면 useradd나 adduser를 사용해야 한다
 <a id="python-dev-install"></a></p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">FROM nvdocker-build
-MAINTAINER hanjack
+MAINTAINER kimtaesu
 
 LABEL <span class="nv">Description</span><span class="o">=</span><span class="s2">"This image is the base of python and octave app"</span> <span class="nv">Vendor</span><span class="o">=</span><span class="s2">"LucidMind Ltd."</span> <span class="nv">Version</span><span class="o">=</span><span class="s2">"1.0"</span>
 
@@ -252,11 +256,11 @@ CMD <span class="o">[</span><span class="s2">"/bin/zsh"</span><span class="o">]<
 <p>다음 theano를 설치하기 위한 Dockerfile을 준비한다.
 <a id="theano-install"> </a></p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># Copyright (c) hanjack's LucidMind Project</span>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># Copyright (c) kimtaesu's LucidMind Project</span>
 <span class="c"># Distributed under the terms of the Modified BSD License.</span>
 
 FROM metal/cuda
-MAINTAINER hanjack &lt;haanjack@gmail.com&gt;
+MAINTAINER kimtaesu &lt;haanjack@gmail.com&gt;
 
 LABEL <span class="nv">Description</span><span class="o">=</span><span class="s2">"This image is the base of python and octave app"</span> <span class="nv">Vendor</span><span class="o">=</span><span class="s2">"LucidMind Ltd."</span> <span class="nv">Version</span><span class="o">=</span><span class="s2">"1.0"</span>
 
@@ -273,7 +277,7 @@ RUN aptitude install liblapack-dev libblas-dev gfortran --without-recommends -y 
 
 <p>그러면 meta/cuda/theano와 같이 사용자가 원하는 이미지 명을 가진 docker image가 생성 될 것이다.</p>
 
-<h3 id="cpu--">CPU만을 사용하는 경우</h3>
+<h3 id="cpu만을-사용하는-경우">CPU만을 사용하는 경우</h3>
 
 <blockquote>
   <p>필요한 것</p>
@@ -289,15 +293,15 @@ RUN aptitude install liblapack-dev libblas-dev gfortran --without-recommends -y 
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-03-16-Theano-docker-install/%20via%20&#64;haanjack&hashtags=Theano,CUDA,GPU,docker,debian,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-03-16-Theano-docker-install/%20via%20&#64;&hashtags=Theano,CUDA,GPU,docker,debian,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-03-16-Theano-docker-install/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-03-16-Theano-docker-install/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-03-16-Theano-docker-install/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-03-16-Theano-docker-install/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -312,7 +316,7 @@ RUN aptitude install liblapack-dev libblas-dev gfortran --without-recommends -y 
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-03-16-Theano-docker-install/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

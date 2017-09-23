@@ -1,8 +1,8 @@
-# Copyright (c) hanjack's LucidMind Project
+# Copyright (c) kimtaesu's LucidMind Project
 # Distributed under the terms of the Modified BSD License.
 
 FROM debian:latest
-MAINTAINER hanjack <haanjack@gmail.com>
+MAINTAINER kimtaesu <haanjack@gmail.com>
 
 LABEL Description="This image is the base of python and octave app" Vendor="LucidMind Ltd." Version="1.0"
 

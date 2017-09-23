@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/cuda/2016-04-10-host-device-memory/">
+    <link rel="canonical" href="http://localhost:4000/cuda/2016-04-10-host-device-memory/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -68,6 +68,10 @@
         
           
           <a class="page-link" href="/portfolio/">Gallery</a>
+          
+        
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
           
         
 
@@ -100,7 +104,7 @@
 
 <p><a id="device memory" class="anckor"></a></p>
 
-<h1 id="device-">Device 메모리</h1>
+<h1 id="device-메모리">Device 메모리</h1>
 
 <p>CUDA의 메모리에 대해서 알아보기 전, 먼저 CUDA가 동작하는 환경에 대해서 간략히 짚어보도록 하겠습니다.
 앞으로 개발할 환경은 HC(Heterogeneous Computing)또는 HPC(Heterogeneous Processor Computing)라고 불리는, 한가지 이상의 프로세서를 이용하여 컴퓨팅을 이용한 환경입니다. 이는 보통의 프로그램을 개발하는 것과 독립된 동작 환경을 갖고 있는 임베디드 프로그래밍하고는 또 다른 형태의 프로그래밍 개념인데, 보조 연산 프로세서가 있다고 생각하시면 됩니다. 아래 그림을 보고 설명 드리겠습니다.</p>
@@ -120,7 +124,7 @@ CPU와 GPU 동작 순서. (Source: Wikipedia)
 
 <p>따라서 CUDA에서는 CPU와 GPU를 분리해서 생각하며, CPU를 Host, GPU를 Device라고 부릅니다. 이는 CPU 입장에서 GPU 역시 보조 프로세서이고, 데이터는 기본적으로 CPU 쪽 메모리에 있기 때문에 주인(Host)입장이기 때문입니다. 이와 비슷하게 CPU를 위한 메모리는 Host 메모리, GPU 메모리는 Device 메모리라고 합니다.</p>
 
-<h2 id="section">할당 및 초기화</h2>
+<h2 id="할당-및-초기화">할당 및 초기화</h2>
 
 <p>CUDA Host 메모리 할당은 기존의 메모리 할당과 크게 차이가 없습니다.</p>
 
@@ -133,13 +137,13 @@ CPU와 GPU 동작 순서. (Source: Wikipedia)
 
 <p>그러면 <strong>h_A</strong>와 <strong>d_A</strong>는 같은 사이즈이지만 각기 <strong>Host</strong>와 <strong>Device</strong>에 메모리를 할당하게 됩니다. 그럼 이를 바탕으로 예제를 살펴보도록 하겠습니다.</p>
 
-<h2 id="cuda--">CUDA 메모리 해제</h2>
+<h2 id="cuda-메모리-해제">CUDA 메모리 해제</h2>
 
 <p>그러하면 GPU 메모리에 할당한 Device 메모리는 어떻게 해제할까요. 이를 위해서 CUDA에서는 <strong>cudaFree</strong>라는 함수를 제공하고 있습니다.</p>
 
 <p><code class="highlighter-rouge">cudaFree(void* p_mempry);</code></p>
 
-<h2 id="section-1">데이터 복사</h2>
+<h2 id="데이터-복사">데이터 복사</h2>
 
 <p>CUDA 함수를 실행하기 이전에 또는 CUDA 동작의 결과물을 가져오기 위해서 CUDA 메모리를 복사하는 과정이 반드시 필요하다고 앞에서 말씀드렸었습니다. 이를 위해서 CUDA 에서는 다음과 같은 함수를 제공하고 있습니다.</p>
 
@@ -278,7 +282,7 @@ line 27-28은 CUDA Device Memory로 데이터를 복사하고, line 36에서는 
 
 <p><a id="shared memory" class="anckor"></a></p>
 
-<h1 id="shared-">Shared 메모리</h1>
+<h1 id="shared-메모리">Shared 메모리</h1>
 
 <p>Shared 메모리는 CUDA On-chip 메모리 중에서 L1캐시와 같은 역할을 합니다. CPU와 가장 큰 차이는, CPU에서는 캐시의 데이터를 스스로 관리를 하지만, CUDA의 L1 캐시라고 불리는 Shared 메모리는 CUDA 코드로 직접 어떤 데이터를 넣을 것인지 명시를 해야만 합니다. 이런 구성이 갖는 장점은 다음과 같습니다.</p>
 
@@ -298,26 +302,26 @@ line 27-28은 CUDA Device Memory로 데이터를 복사하고, line 36에서는 
 
 <p><a id="constant memory" class="anckor"></a></p>
 
-<h1 id="constant-">Constant 메모리</h1>
+<h1 id="constant-메모리">Constant 메모리</h1>
 
 <p><a id="texture memory" class="anckor"></a></p>
 
-<h1 id="texture--surface-">Texture &amp; Surface 메모리</h1>
+<h1 id="texture--surface-메모리">Texture &amp; Surface 메모리</h1>
 
 
   </article>
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/cuda/2016-04-10-host-device-memory/%20via%20&#64;haanjack&hashtags=CUDA Memory,CUDA,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/cuda/2016-04-10-host-device-memory/%20via%20&#64;&hashtags=CUDA Memory,CUDA,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/cuda/2016-04-10-host-device-memory/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cuda/2016-04-10-host-device-memory/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/cuda/2016-04-10-host-device-memory/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/cuda/2016-04-10-host-device-memory/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -332,7 +336,7 @@ line 27-28은 CUDA Device Memory로 데이터를 복사하고, line 36에서는 
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/cuda/2016-04-10-host-device-memory/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

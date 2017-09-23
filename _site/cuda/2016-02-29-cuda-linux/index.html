@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/cuda/2016-02-29-cuda-linux/">
+    <link rel="canonical" href="http://localhost:4000/cuda/2016-02-29-cuda-linux/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -93,20 +97,20 @@
 
 <p>CUDA Toolkit Document에 있는 <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#axzz41VsznO2m">Installation Guide Linux</a>에 따른다.</p>
 
-<h3 id="section">사전 설치 작업</h3>
+<h3 id="사전-설치-작업">사전 설치 작업</h3>
 
-<h4 id="section-1">우분투 버전 확인</h4>
+<h4 id="우분투-버전-확인">우분투 버전 확인</h4>
 
 <p>CUDA 7.5버전을 위해서는 Ubuntu 14.04가 최소 버전이다. 이는 이 글을 쓰고 있는 현재 LTS버전으로 배포되고 있는 버전이다. 또한 64-bit 버전이어야 한다. 혹시나 어떤 bit를 설치했는지 확인을 하고 싶다면 다음과 같은 명령어를 입력하면 확인할 수 있다. i386이 나오면 x86, amd64가 나온다면 64bit이다.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">dpkg -s libc6 | grep Arch</code></pre></figure>
 
-<h4 id="cuda--">CUDA 카드 지원확인</h4>
+<h4 id="cuda-카드-지원확인">CUDA 카드 지원확인</h4>
 <p>다음의 명령을 통해 인식된 카드의 이름 <a href="http://developer.nvidia.com/cuda-gpus">CUDA 지원 목록</a>에도 나온다면 CUDA 프로그래밍이 가능한 카드이다.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">lspci | grep -i nvidia</code></pre></figure>
 
-<h4 id="gcc--">GCC 설치 확인</h4>
+<h4 id="gcc-설치-확인">GCC 설치 확인</h4>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">gcc --version</code></pre></figure>
 
@@ -114,19 +118,21 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">apt-get install build-essential</code></pre></figure>
 
-<h4 id="kernel-header--development-package--">Kernel Header 및 Development Package 설치 확인</h4>
+<h4 id="kernel-header-및-development-package-설치-확인">Kernel Header 및 Development Package 설치 확인</h4>
 <p>Ubuntu 환경에서 다음과 같은 명령어로 linux header를 설치한다.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span></code></pre></figure>
 
-<h4 id="section-2">설치 방법 선택</h4>
-<p>CUDA Toolkit을 설치하는 방법은 크게 두가지 방법이 있다.
-1. 배포판 의존 패키지
-1. Standalone 패키지</p>
+<h4 id="설치-방법-선택">설치 방법 선택</h4>
+<p>CUDA Toolkit을 설치하는 방법은 크게 두가지 방법이 있다.</p>
+<ol>
+  <li>배포판 의존 패키지</li>
+  <li>Standalone 패키지</li>
+</ol>
 
 <p>Standalone 패키지를 이용하게 되면 여러 리눅스 환경에 쉽게 포팅할 수 있다는 장점이 있지만 업데이트가 사용하는 리눅스 배포판을 따르지 않아 개별적으로 해줘야한다는 단점이 있다. 반면, 배포판 의존 패키지는 패포판 패키지 관리 프로그램으로 업데이트가 관리된다는 장점이 있다. 나는 패포판 의존 패키지를 선택했으며, nVidia 문서에서도 가급적 배포판 의존 패키지를 선택 할 것을 권장하고 있다.</p>
 
-<h3 id="cuda-toolkit-download---">CUDA Toolkit Download 및 설치 준비</h3>
+<h3 id="cuda-toolkit-download-및-설치-준비">CUDA Toolkit Download 및 설치 준비</h3>
 <p><a href="http://developer.nvidia.com/cuda-downloads">CUDA 다운로드</a>에서 <a href="http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb">Linux - x86_64 - Ubuntu - 14.04 - deb</a>을 선택했다.</p>
 
 <p>내 경우에는 MAC을 주로 사용하고, 데스크탑을 CUDA 서버로 사용할 계획이었으므로, 주소를 복사해서 다음과 같이 서버로 바로 다운 받았다.</p>
@@ -143,7 +149,7 @@ sudo /usr/bin/nvidia-uninstall</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get --purge remove &lt;package_name&gt;</code></pre></figure>
 
-<h3 id="section-3">설치</h3>
+<h3 id="설치">설치</h3>
 <p>설치 명령은 다음과 같다. 다운 받을때 나오는 창에서도 안내로 나온다</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo dpkg -i cuda-repo-&lt;distro&gt;_&lt;version&gt;_&lt;architecture&gt;.deb
@@ -151,13 +157,13 @@ sudo apt-get update
 sudo apt-get install cuda
 sudo reboot</code></pre></figure>
 
-<h3 id="section-4">관리</h3>
+<h3 id="관리">관리</h3>
 
-<h4 id="package--">설치된 Package 목록 확인</h4>
+<h4 id="설치된-package-목록-확인">설치된 Package 목록 확인</h4>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">cat /var/lib/apt/lists/<span class="k">*</span>cuda<span class="k">*</span>Packages | grep <span class="s2">"Package:"</span></code></pre></figure>
 
-<h4 id="package-">설치한 Package의 업그레이드</h4>
+<h4 id="설치한-package의-업그레이드">설치한 Package의 업그레이드</h4>
 <p>패키지 관리자에서 CUDA의 새로운 패키지가 나오면 공지가 나온다고 하는데, 그때 업데이트를 하면 된다고 한다.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install cuda
@@ -165,10 +171,10 @@ sudo apt-get install cuda-driver</code></pre></figure>
 
 <p>다만 Ubuntu의 패키지 전체를 업데이트 하는 과정에서 함께 업데이트가 될 것이므로 굳이 별도로 하지 않아도 될 것 같다. 이건 시간이 지나서 실제 업데이트가 될 때 어떻게 되는지 지켜봐야 할 것 같다.</p>
 
-<h3 id="section-5">시험</h3>
+<h3 id="시험">시험</h3>
 <p>CUDA Toolkit 및 driver 설치와 함께 설치된 sample을 통해서 CUDA가 올바르게 설치가 되었는지 확인해 보자.</p>
 
-<h4 id="section-6">환경변수 추가</h4>
+<h4 id="환경변수-추가">환경변수 추가</h4>
 <p>사용하고 있는 쉘에 다음과 같은 라인 두개를 추가한다.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-7.5/bin:<span class="nv">$PATH</span>
@@ -195,15 +201,15 @@ make</code></pre></figure>
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/cuda/2016-02-29-cuda-linux/%20via%20&#64;haanjack&hashtags="
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/cuda/2016-02-29-cuda-linux/%20via%20&#64;&hashtags="
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/cuda/2016-02-29-cuda-linux/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cuda/2016-02-29-cuda-linux/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/cuda/2016-02-29-cuda-linux/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/cuda/2016-02-29-cuda-linux/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -218,7 +224,7 @@ make</code></pre></figure>
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/cuda/2016-02-29-cuda-linux/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

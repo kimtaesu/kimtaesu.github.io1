@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/metal/2016-03-30-ml-ng-introduction/">
+    <link rel="canonical" href="http://localhost:4000/metal/2016-03-30-ml-ng-introduction/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -70,6 +70,10 @@
           <a class="page-link" href="/portfolio/">Gallery</a>
           
         
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
+          
+        
 
       </div>
     </nav>
@@ -93,20 +97,22 @@
 
 <h1 id="introduction">Introduction</h1>
 
-<h2 id="machine-learning-">머신러닝(Machine Learning)이란 무엇인가</h2>
+<h2 id="머신러닝machine-learning이란-무엇인가">머신러닝(Machine Learning)이란 무엇인가</h2>
 <ul>
   <li>컴퓨터로 하여금 명시적인 프로그램 없이 학습할 수 있는 능력을 갖도록 하는 분야 (old)</li>
   <li>경험(E)으로부터 배울 수 있는 프로그램으로서, 경험을 위해 수행하는 작업(T)과 그것의 결과(P)를 통해 경험의 질이 향상되는 프로그램</li>
 </ul>
 
-<p>예) 체커 게임
- * E = 체커 게임을 여러번 해본 경험
- * T = 체커 게임 1회
- * P = 프로그램이 다음 게임에서 승리할 확률</p>
+<p>예) 체커 게임</p>
+<ul>
+  <li>E = 체커 게임을 여러번 해본 경험</li>
+  <li>T = 체커 게임 1회</li>
+  <li>P = 프로그램이 다음 게임에서 승리할 확률</li>
+</ul>
 
 <p>결국은 원하는 결과를 얻는데 필요한 과정에 대하여 명확한 프로그래밍 없이, Software가 스스로 원하는 결과를 얻을 수 있도록 해주는 절차를 머신러닝이라고 한다.</p>
 
-<h2 id="supervised-learning-">Supervised Learning (지도학습)</h2>
+<h2 id="supervised-learning-지도학습">Supervised Learning (지도학습)</h2>
 <p>Supoervised Learning은 주어진 데이터에서 우리가 어떤 것이 원하는 결과인지 알고 있는 상황에서 입력과 출력간의 관계를 찾는 것을 말한다.</p>
 
 <p>Supervised Learning 문제는 다음과 같이 분류된다.</p>
@@ -128,29 +134,31 @@
 
 <p>예2) 예1의 문제는 원하는 결과를 다음과 바꾸면 <em>classification</em> 문제로 바꿀 수 있다. 집의 가격을 예측하는 것이 아니라 <em>원하는 가격보다 더 비싸게 또는 더 싸게 판매하는 하였는가</em>로 문제를 바꾸는 것이다. 이 경우에는 2개의 분류로 결과가 나뉘게 된다.</p>
 
-<h2 id="unsupervised-learning-">Unsupervised Learning (비지도학습)</h2>
+<h2 id="unsupervised-learning-비지도학습">Unsupervised Learning (비지도학습)</h2>
 <p>Unsupervised Learning은 우리가 어떤 결과를 얻는 것이 좋은지 알지 못할때 사용하는 방법이다. 데이터의 샘플들이 어떤 연관관계가 있는지 알지 못하는 상태에서 상관관계를 파악할 수 있게 된다.</p>
 
-<p>Unsupervised Learning 문제는 다음과 같이 분류된다.
-* clustering
-  연관관계가 있는 데이터끼리 묶어내는 문제. 정확한 분류를 알지 못하므로 예측한 결과에 대한 피드백이 없다.
-* Associative
-  새로운 데이터에 대하여 상관관계가 큰 경우을 추출해서 새로운 데이터에 대한 분류를 하는 문제</p>
+<p>Unsupervised Learning 문제는 다음과 같이 분류된다.</p>
+<ul>
+  <li>clustering
+연관관계가 있는 데이터끼리 묶어내는 문제. 정확한 분류를 알지 못하므로 예측한 결과에 대한 피드백이 없다.</li>
+  <li>Associative
+새로운 데이터에 대하여 상관관계가 큰 경우을 추출해서 새로운 데이터에 대한 분류를 하는 문제</li>
+</ul>
 
 
   </article>
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/metal/2016-03-30-ml-ng-introduction/%20via%20&#64;haanjack&hashtags=Machine Learning,Coursera,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/metal/2016-03-30-ml-ng-introduction/%20via%20&#64;&hashtags=Machine Learning,Coursera,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/metal/2016-03-30-ml-ng-introduction/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/metal/2016-03-30-ml-ng-introduction/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/metal/2016-03-30-ml-ng-introduction/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/metal/2016-03-30-ml-ng-introduction/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -165,7 +173,7 @@
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/metal/2016-03-30-ml-ng-introduction/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

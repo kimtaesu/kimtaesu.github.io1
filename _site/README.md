@@ -1,6 +1,6 @@
 # haanjack.github.io
 
-a blog written by hanjack.
+a blog written by kimtaesu.
 
 # design
 

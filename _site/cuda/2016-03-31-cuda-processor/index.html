@@ -11,7 +11,7 @@
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/cuda/2016-03-31-cuda-processor/">
+    <link rel="canonical" href="http://localhost:4000/cuda/2016-03-31-cuda-processor/">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <line rel="stylesheet" href="/css/solarized_light.css"
@@ -39,12 +39,12 @@
     <header class="site-header">
 
   <div class="wrapper">
-    <div class="site-title" >*hanjack</div>
+    <div class="site-title" >*kimtaesu</div>
       
     <nav class="site-nav">
         
       <div class="trigger">
-        <!-- hanjack instead of blog -->
+        <!-- kimtaesu instead of blog -->
         <a class="page-link" href="/">blog</a>
 
         
@@ -68,6 +68,10 @@
         
           
           <a class="page-link" href="/portfolio/">Gallery</a>
+          
+        
+          
+          <a class="page-link" href="/self_improvement/">Self-Improve</a>
           
         
 
@@ -114,7 +118,7 @@
 
 <p><a id="CUDA Processor Architecture"></a></p>
 
-<h1 id="cuda-processor-">CUDA Processor 구조</h1>
+<h1 id="cuda-processor-구조">CUDA Processor 구조</h1>
 
 <p>CUDA Processor의 구조를 살펴보도록 하겠습니다. 그리고 어떻게 CUDA에서 병렬처리가 이뤄지는지 살펴보도록 하겠습니다.</p>
 
@@ -218,7 +222,7 @@ CUDA Programming에서 최적화의 상당부분은 이 CUDA Multi-Processor에 
 
 <p><a id="CUDA Processor &amp; Thread"></a></p>
 
-<h1 id="cuda-thread-hierachy-cuda-processor-">CUDA Thread Hierachy와 CUDA Processor간의 관계</h1>
+<h1 id="cuda-thread-hierachy와-cuda-processor간의-관계">CUDA Thread Hierachy와 CUDA Processor간의 관계</h1>
 
 <p>CUDA Processor와 CUDA의 논리적인 구조는 다음과 같은 상관 관계가 있습니다.</p>
 
@@ -253,7 +257,7 @@ CUDA Programming에서 최적화의 상당부분은 이 CUDA Multi-Processor에 
 
 <p><a id="CUDA Thread Index"></a></p>
 
-<h1 id="cuda-thread-index-">CUDA Thread Index 구성</h1>
+<h1 id="cuda-thread-index-구성">CUDA Thread Index 구성</h1>
 
 <p>CUDA Kernel을 개발하실때 주지해야 하는 사항은, 여러분이 짜는 CUDA 코드는 병렬적으로 처리되는 코드이지만, CUDA Thread 입장에서는 오직 하나의 Thread만이 동작하는 코드입니다. 따라서 CUDA Thread는 고유의 Index를 갖고 있으며, 이를 알아내기 위해서는 CUDA Thread Indexing Keyword에 대해서 알고 계셔야 합니다.</p>
 
@@ -387,15 +391,15 @@ CUDA Keyword로는 다음과 같이 정리됩니다.</p>
 
   <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/cuda/2016-03-31-cuda-processor/%20via%20&#64;haanjack&hashtags=CUDA,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/cuda/2016-03-31-cuda-processor/%20via%20&#64;&hashtags=CUDA,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/cuda/2016-03-31-cuda-processor/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cuda/2016-03-31-cuda-processor/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/cuda/2016-03-31-cuda-processor/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/cuda/2016-03-31-cuda-processor/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -410,7 +414,7 @@ CUDA Keyword로는 다음과 같이 정리됩니다.</p>
     function load_disqus()
     {
         disqus_loaded = true;
-        var disqus_shortname = 'haanjack';
+        var disqus_shortname = '';
         var disqus_title = '';
         var disqus_url = '/cuda/2016-03-31-cuda-processor/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
