@@ -1,5 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 _
+._site/*
 .gradle/
 .idea/
 .sass-cache/5895ef90ac4eac31521d22e16961274c6febeaa4/
