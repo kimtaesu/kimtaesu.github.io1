@@ -14,7 +14,7 @@ markdown: kramdown
 highlighter: rouge
 
 # Pagination
-gems: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-assets', 'jekyll-toc']
+gems: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-assets', 'jekyll-toc', 'jekyll-jupyter-notebook']
 paginate: 15
 paginate_path: "/blog/page:num/"
 mermaid:
