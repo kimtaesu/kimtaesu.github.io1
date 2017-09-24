@@ -12,7 +12,11 @@ github_username:  kimtaesu
 markdown: kramdown
 
 highlighter: rouge
-
+exclude:
+  - "README.md"
+  - "Rakefile"
+  - "Gemfile"
+  - "Gemfile.lock"
 # Pagination
 gems: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-assets', 'jekyll-toc', 'jekyll-jupyter-notebook']
 paginate: 15

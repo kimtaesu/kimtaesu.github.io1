@@ -11,4 +11,8 @@ toc: true
 
 # Functools.wrap 함수 데코레이터
 
+{::nomarkdown}
 {% jupyter_notebook ../_ipython/jekyll_test.ipynb %}
+{:/nomarkdown}
+
+
