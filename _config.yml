@@ -21,18 +21,22 @@ mermaid:
   src: '/scripts/mermaid.js'
 
 collections:
-#  cuda:
-#    output: true
-#    permalink: /cuda/:path/
 #  metal:
 #    output: true
 #    permalink: /metal/:path/
 #  portfolio:
 #    output: true
 #    permalink: /portfolio/:path/
+  android:
+    output: true
+    permalink: /android/:path/
+  python:
+    output: true
+    permalink: /python/:path/
   self-improvement:
     output: true
     permalink: /self-improvement/:path/
+
 #poetry:
 #    output: true
 #    permalink: /poetry/:path/
