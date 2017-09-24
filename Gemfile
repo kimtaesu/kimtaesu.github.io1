@@ -1,5 +1,4 @@
 gem "jekyll-paginate"
-gem "jekyll-jupyter-notebook"
 gem "jekyll-mermaid"
 gem "jekyll-assets"
 gem "jekyll-toc"

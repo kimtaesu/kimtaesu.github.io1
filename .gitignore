@@ -25,3 +25,5 @@ gradle/
 gradlew
 gradlew.bat
 kimtaesu.github.io.iml
+/_site/
+/Gemfile.lock
