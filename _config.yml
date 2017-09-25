@@ -31,6 +31,10 @@ collections:
 #  portfolio:
 #    output: true
 #    permalink: /portfolio/:path/
+
+  kotlin:
+    output: true
+    permalink: /kotlin/:path/
   android:
     output: true
     permalink: /android/:path/
