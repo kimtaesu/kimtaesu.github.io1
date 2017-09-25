@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Weekly #60 1. KOTLIN REIFIED TYPES IN INLINE FUNCTIONS"
+title:  "Weekly #60 1. Spek your reactive stream using PublishSubjects"
 date:   2017-09-25 0:10:00
-description: Keyword <Reified> in Kotlin 
+description: Python 내장 모듈 contextmanager
 tags:
-- Kotlin
-- Reified
+- Python
+- contextmanager
 toc: true
 ---
 
