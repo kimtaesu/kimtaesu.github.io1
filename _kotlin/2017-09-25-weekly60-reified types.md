@@ -10,7 +10,7 @@ toc: true
 ---
 
 # KOTLIN REIFIED TYPES IN INLINE FUNCTIONS
-[SourcePage][source]
+[Article][source]
 
 
 ## Starting situation
