@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Weekly #60 4. Getting to know Kotlin’s Extension functions: some caveats to keep in mind"
+title:  "Weekly 60 Getting to know Kotlin’s Extension functions: some caveats to keep in mind"
 date:   2017-09-25 0:10:00
-description: Getting to know Kotlin’s Extension functions some caveats to keep in mind
+description: Getting to know Kotlins Extension functions some caveats to keep in mind
+tag:
+ - weekly 60
+ - kotlin
 toc: true
 ---
 

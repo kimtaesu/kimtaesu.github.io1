@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Weekly #60 2. DI FOR LAZY KOTLINIERS"
+title:  "Weekly 60 DI FOR LAZY KOTLINIERS"
 date:   2017-09-25 0:10:00
 description: Kotlin DI FOR LAZY KOTLINIERS
-tags:
-- Kotlin
+tag:
+ - weekly 60
+ - kotlin
 toc: true
 ---
 

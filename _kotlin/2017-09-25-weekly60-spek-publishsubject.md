@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Weekly #60 3. Spek your reactive stream using PublishSubjects"
+title:  "Weekly 60 Spek your reactive stream using PublishSubjects"
 date:   2017-09-25 0:10:00
 description: Spek 를 활용한 Rx Test code 
+tag:
+ - weekly 60
+ - kotlin
 toc: true
 ---
 

@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Weekly #60 1. KOTLIN REIFIED TYPES IN INLINE FUNCTIONS"
+title:  "Weekly 60 KOTLIN REIFIED TYPES IN INLINE FUNCTIONS"
 date:   2017-09-25 0:10:00
 description: Keyword Reified in Kotlin 
+tag:
+ - weekly 60
+ - kotlin
 toc: true
 ---
 
