@@ -2,10 +2,7 @@
 layout: post
 title:  "Weekly #60 1. KOTLIN REIFIED TYPES IN INLINE FUNCTIONS"
 date:   2017-09-25 0:10:00
-description: Keyword <Reified> in Kotlin 
-tags:
-- Kotlin
-- Reified
+description: Keyword Reified in Kotlin 
 toc: true
 ---
 
