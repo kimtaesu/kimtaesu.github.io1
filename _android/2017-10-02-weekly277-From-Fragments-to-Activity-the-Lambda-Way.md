@@ -175,13 +175,12 @@ public interface HeadlineListener<T extends Activity> extends Serializable {
   } 
 {% endhighlight %}  
 
-Conclusion
+결론
 * Activity, Fragment 간의 통신은 이제 명시적입니다. Good Old Way 인터페이스를 구현하는 것과는 반대로 IDE에서 쉽게 추적 할 수 있습니다.
 * Good Old Way의 activity를 casting 제거
 * 우리는 상속에 대한 구성을 선호합니다.
 * 코드는 현대 Rx 체인의 나머지 부분과 매우 비슷하게 보입니다.
 * 이러한 API를 사용하여 Fragment를 사용하는 경우 리스너 인터페이스를 사용하는 것은 메소드 참조를 사용하는 것만 큼 쉽고 솔루션의 복잡성은 대부분 장면 뒤에서 발생합니다.
-* 런타임시 버그를 줄이는 인수를 설정하는 빌더 패턴을 사용하여 건물 조각을 적용합니다.
 
   [source]: https://medium.com/groupon-eng/from-fragments-to-activity-the-lambda-way-32c768c72aa9
   [github]: https://github.com/stephanenicolas/activtity-fragment-lambda
