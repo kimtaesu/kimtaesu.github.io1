@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Android Clean Architecture (1/2)"
+title:  "Android Clean Architecture"
 date:   2017-10-04 0:10:00
-description: Clean Architecture  (1/2)
+description: Clean Architecture
 tags:
 - Clean Architecture
 ---
 
-# [Android Clean Architecture  (1/2)](https://github.com/bufferapp/clean-architecture-components-boilerplate)
-
+# [Android Clean Architecture](https://github.com/bufferapp/clean-architecture-components-boilerplate)
+[Github](https://github.com/bufferapp/clean-architecture-components-boilerplate)
 
 원래의 Clean Architecture Boilerplate를 fork 한 것입니다
 지금 Repo 에서는
@@ -58,7 +58,8 @@ Sample에서 clean architecture는 over-complicated 되어 보입니다.
 
 
 ## Architecture
-세부적인 내용은 다루지 않았습니다. 만약 세부적인 내용을 원하시면 [Architecture](https://github.com/bufferapp/clean-architecture-components-boilerplate#Architecture)
+완벽하게 설명할 순 없습니다. 그렇기 때문에 원문을 참조합니다. [Architecture](https://github.com/bufferapp/clean-architecture-components-boilerplate#Architecture)
+
 <img width="100%" src="https://github.com/bufferapp/clean-architecture-components-boilerplate/blob/master/art/architecture.png?raw=true">
 <img width="100%" src="https://github.com/bufferapp/android-clean-architecture-boilerplate/blob/master/art/ui.png?raw=true">
 
@@ -71,11 +72,15 @@ Presentation Layer <-> Data Layer 사이 Repository를 통한 의존성 해소 :
 
 ## Dependencies Graph 
 
+Article을 보고 제가 직접 만든 Dependencies Graph 입니다. 
+ 
 Dependencies Graph를 통하여 꽤 유용하게 분석할 수 있습니다.  
  
 작아서 보이지 않으면 [원본](https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png?raw=true">
+
+관련된 Article [ViewModel Test](/android/2017-10-04-weekly277-Android-Architecture-Components-Testing-your-ViewModel-LiveData/)
 
 ## Reference
 * [https://github.com/android10/Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
