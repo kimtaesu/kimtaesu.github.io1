@@ -62,8 +62,12 @@ Sample에서 clean architecture는 over-complicated 되어 보입니다.
 <img width="100%" src="https://github.com/bufferapp/clean-architecture-components-boilerplate/blob/master/art/architecture.png?raw=true">
 <img width="100%" src="https://github.com/bufferapp/android-clean-architecture-boilerplate/blob/master/art/ui.png?raw=true">
 
+Android MVVM Pattern : [Article](https://medium.com/nspoons/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-architecture-%ED%8C%A8%ED%84%B4-part-3-%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EB%B7%B0%EB%AA%A8%EB%8D%B8-model-view-viewmodel-688f8d93d557)
 
+Presentation Layer <-> Data Layer 사이 Repository를 통한 의존성 해소 : 
+[Acticle](https://medium.com/@saurabhpant/repository-layer-using-room-and-dagger-2-android-12d311830fd9)
 
+<img width="100%" src="https://github.com/bufferapp/android-clean-architecture-boilerplate/blob/master/art/data.png?raw=true">
 
 ## Dependencies Graph 
 
@@ -72,6 +76,10 @@ Dependencies Graph를 통하여 꽤 유용하게 분석할 수 있습니다.
 작아서 보이지 않으면 [원본](https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png?raw=true">
+
+## Test Code
+
+이제 Test Code를 통한 Spec과 전반적인 이해를 해보도록 합시다. 
 
 ## Reference
 * [https://github.com/android10/Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
