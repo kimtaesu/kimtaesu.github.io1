@@ -58,13 +58,20 @@ Sample에서 clean architecture는 over-complicated 되어 보입니다.
 
 
 ## Architecture
-
+세부적인 내용은 다루지 않았습니다. 만약 세부적인 내용을 원하시면 [Architecture](https://github.com/bufferapp/clean-architecture-components-boilerplate#Architecture)
 <img width="100%" src="https://github.com/bufferapp/clean-architecture-components-boilerplate/blob/master/art/architecture.png?raw=true">
 <img width="100%" src="https://github.com/bufferapp/android-clean-architecture-boilerplate/blob/master/art/ui.png?raw=true">
 
-## Dependencies Graph
 
-<img width="100%" src="https://github.com/bufferapp/android-clean-architecture-boilerplate/blob/master/art/ui.png?raw=true">
+
+
+## Dependencies Graph 
+
+Dependencies Graph를 통하여 꽤 유용하게 분석할 수 있습니다.  
+ 
+작아서 보이지 않으면 [원본](https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png)
+
+<img width="100%" src="https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png?raw=true">
 
 ## Reference
 * [https://github.com/android10/Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
