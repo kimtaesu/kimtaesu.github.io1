@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Android Clean Architecture"
+title:  "Android Clean Architecture (1/2)"
 date:   2017-10-04 0:10:00
-description: Clean Architecture
+description: Clean Architecture  (1/2)
 tags:
 - Clean Architecture
 ---
 
-# [Android Clean Architecture](https://github.com/bufferapp/clean-architecture-components-boilerplate)
+# [Android Clean Architecture  (1/2)](https://github.com/bufferapp/clean-architecture-components-boilerplate)
 
 
 원래의 Clean Architecture Boilerplate를 fork 한 것입니다
@@ -76,10 +76,6 @@ Dependencies Graph를 통하여 꽤 유용하게 분석할 수 있습니다.
 작아서 보이지 않으면 [원본](https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/kimtaesu/clean-architecture-components-boilerplate/master/document/clean_architecture_graph.png?raw=true">
-
-## Test Code
-
-이제 Test Code를 통한 Spec과 전반적인 이해를 해보도록 합시다. 
 
 ## Reference
 * [https://github.com/android10/Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
