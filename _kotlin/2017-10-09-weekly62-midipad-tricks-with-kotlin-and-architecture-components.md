@@ -173,7 +173,7 @@ private val midiController: MidiController by viewModelProvider {
 }
 {% endhighlight %}
 
-{% highlight kotlin  %}
+```kotlin
 inline fun <reified VM : ViewModel> FragmentActivity.viewModelProvider(crossinline provider: () -> VM) = lazyFast {
     object : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>) =
@@ -182,7 +182,7 @@ inline fun <reified VM : ViewModel> FragmentActivity.viewModelProvider(crossinli
         ViewModelProviders.of(this, it).get(VM::class.java)
     }
 }
-{% endhighlight %}
+```
 
 FragmentActivity의 Extension function으로 
 어느 곳에서든 호출 될 수 있으며
