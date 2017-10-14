@@ -125,7 +125,6 @@ RxJava는 데이터 스트림을 조작하는 강력한 메커니즘을 제공�
 따라서 우리는 `onBackpressureLatest(Subscriber)` 생성해야합니다. `Subscriber.request()` 메서드가 호출 될 때만 방출되는 마지막 이벤트를 제외한 모든 이벤트를 삭제합니다.
 
 <img class="col" src="https://cdn-images-1.medium.com/max/2000/1*gEFqpGv6ZjLaeyuf5fZHJw.png"/>
-
 Sample은 [여기서][backpressure-sample] 확인할 수 있습니다. 
 
 이제 `Subscriber`에서 백엔드 호출을 수행하여 `request()`를 호출 할 시점을 알아 보겠습니다. 
