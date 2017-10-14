@@ -19,7 +19,7 @@ Article에서 총 7개의 주제가 있지만, 제가 궁금해했던 것이나 
 
 ### 01. Local Functions
 
-```kotlin
+{% highlight kotlin  %}
 fun OuterFunction(param:Int){
   val outerVar = 11
   fun localFunction(){
@@ -27,7 +27,7 @@ fun OuterFunction(param:Int){
     println(outerVar)
   }
 }
-```
+{% endhighlight %}
 지역 함수는 함수 내부의 함수입니다. 
 로컬 함수는 외부 함수의 매개 변수 및 해당 로컬 변수 (즉, [클로저][closure])에 액세스 할 수 있습니다.
 
@@ -45,28 +45,28 @@ fun OuterFunction(param:Int){
 그러나 `Anonymous Functions`은 약간 다릅니다. 
 
 op라는 함수가 있다고 가정합시다.
-```kotlin
+{% highlight kotlin  %}
 fun op(x:Int,op:(Int) -> Int):Int{
   return op(x)
 }
-```
+{% endhighlight %}
 
 lambdas으로 표현하면 : 
 
-```kotlin
+{% highlight kotlin  %}
 op(3,{it*it})
 //here {it*it} is lambda expression
-```
+{% endhighlight %}
 
 Anonymous으로 표현하면 : 
-```kotlin
+{% highlight kotlin  %}
 //can have multiple returns
 
 op(3,fun(x):Int{
          if(x>10) return 0
          else return x*x
         })
-```
+{% endhighlight %}
 
 `Anonymous Functions`는 일반 함수의 전체 본문을 갖지만 이름은 없습니다.
 
@@ -79,7 +79,7 @@ kotlin의 lambda 표현식은 java의 익명 클래스에 대한 방법으로 �
 
 **NonInline**
 
-```kotlin
+{% highlight kotlin  %}
 fun op(op:()->Unit){
     println("This is before lambda")
     op()
@@ -89,10 +89,10 @@ fun op(op:()->Unit){
 fun main(args: Array<String>) {
     op({println("this is the actual function")})
 }
-```
+{% endhighlight %}
 
 **NonInline kotlin bytecode**
-```java
+{% highlight java  %}
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
@@ -120,10 +120,10 @@ public final class InlineFunctionKt {
       op((Function0)null.INSTANCE);
    }
 }
-```
+{% endhighlight %}
 
 **Inline**
-```kotlin
+{% highlight kotlin %}
 inline fun op(op:()->Unit){
     println("This is before lambda")
     op()
@@ -133,10 +133,10 @@ inline fun op(op:()->Unit){
 fun main(args: Array<String>) {
     op({println("this is the actual function")})
 }
-```
+{% endhighlight %}
 
 **Inline kotlin bytecode**
-```java
+{% highlight java  %}
 
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
@@ -170,12 +170,12 @@ public final class InlineFunctionKt {
       System.out.println(var1);
    }
 }
-```
+{% endhighlight %}
+
 **차이점은 Inline 함수 전체 코드를 해당 함수를 호출하는 곳으로 복사하고 전달됩니다.**
 
 ### 05. Returns And Local Returns
-
-```kotlin
+{% highlight kotlin  %}
 fun ContainingFunction(){
   val nums=1..100
   numbers.forEach{
@@ -185,13 +185,13 @@ fun ContainingFunction(){
     }
   println("Hello!")
 }
-```
+{% endhighlight %}
 
 **Hello!**는 콘솔에 찍히지 않는다.
 
 **Solve : labels** 
 
-```kotlin
+{% highlight kotlin  %}
 ...
   if(it%5==0){
     return@forEach //i.e. name of the higher order function
@@ -203,7 +203,7 @@ numbers.forEach myLabel@{
             return@myLabel  
          }
    ....
-```
+{% endhighlight %}
 
   [source]: https://dev.to/praveenkajla/demystifying-advance-kotlin-concepts-a97
   [closure]: https://ko.wikipedia.org/wiki/%ED%81%B4%EB%A1%9C%EC%A0%80_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
