@@ -13,9 +13,9 @@ toc: true
 ## [Article][source] 
 
 Article에서 총 7개의 주제가 있지만, 제가 궁금해했던 것이나 몰랐던 주제들에 대해서 정리를 하도록 하겠습니다.   
-* 01. Local Functions
-* 03. Anonymous Functions
-* 04.Inline Functions
+* Local Functions
+* Anonymous Functions
+* Inline Functions
 
 ### 01. Local Functions
 
