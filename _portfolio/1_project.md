@@ -14,8 +14,8 @@ img: /images/portfolio/polarisoffice.png
 <a href="https://www.youtube.com/watch?v=J2Q_YlkkbGg" 
 target="_blank">
 <img src="http://img.youtube.com/vi/J2Q_YlkkbGg/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="640" height="480" border="1" /></a>
 
-소스의 기본 틀이 잡혀있는 상태에서 Samsung / LG 각 Vendor 요청에 맞게 기능을 추가하거나 Application 전반에 걸친 이슈을 담당했습니다.
-
-기간은 2012. 01 ~ 2014. 01 까지 24개월 참여하였습니다.   
+### 담당업무
+ * 소스의 기본 틀이 잡혀있는 상태에서 Samsung / LG 각 Vendor 요구사항에 맞게 기능 추가
+ * Application 전반에 걸친 이슈 수정
