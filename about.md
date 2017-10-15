@@ -23,7 +23,7 @@ BlueWhale에서 근무하고 있습니다.
 
 <br/>
 
-안드로이드 개발자로 5년째 개발하고 있습니다. 
+소프트웨어 장인이 되고 싶은 개발자입니다.  
 <br/>
 
 <h1>Career</h1>
@@ -38,23 +38,24 @@ BlueWhale에서 근무하고 있습니다.
 * IDE 
   * Intellij
   * Android Studio
+  
 * Language
   * Java
   * Kotlin
-  * Python
   * C / C++
+  
 * Tool
   * Git
   * Gradle
   * Maven
   
 * Programming
-  * RxJava
+  * Rx
   * DesignPatterns
   * OOP
   * Functional
   * TDD
-
+  * DI
 
 <!--
 <div class="tags">
