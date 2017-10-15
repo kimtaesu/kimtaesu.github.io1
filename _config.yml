@@ -28,9 +28,9 @@ collections:
 #  metal:
 #    output: true
 #    permalink: /metal/:path/
-#  portfolio:
-#    output: true
-#    permalink: /portfolio/:path/
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
   kotlin:
     output: true
     permalink: /kotlin/:path/
