@@ -17,5 +17,5 @@ target="_blank">
 alt="IMAGE ALT TEXT HERE" width="640" height="480" border="1" /></a>
 
 ### 담당업무
- * 소스의 기본 틀이 잡혀있는 상태에서 Samsung / LG 각 Vendor 요구사항에 맞게 기능 추가
+ * Vendor 요구사항에 맞게 기능 추가
  * Application 전반에 걸친 이슈 수정
