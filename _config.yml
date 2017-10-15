@@ -37,9 +37,9 @@ collections:
   android:
     output: true
     permalink: /android/:path/
-  python:
-    output: true
-    permalink: /python/:path/
+#  python:
+#    output: true
+#    permalink: /python/:path/
   self-improvement:
     output: true
     permalink: /self-improvement/:path/

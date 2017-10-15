@@ -28,10 +28,9 @@ BlueWhale에서 근무하고 있습니다.
 
 <h1>Career</h1>
 <br/>
-* [BlueWhale](https://bluewhale.kr/)
-* [BNP Innovatoin](http://www.bnpinnovation.com/)
-* [인프라웨어](https://www.infraware-global.com/)
-<br/>
+* [BlueWhale](https://bluewhale.kr/)  [2017. 07 ~ ing] 
+* [BNP Innovatoin](http://www.bnpinnovation.com/)  [2014. 07 ~ 2016. 12]
+* [인프라웨어](https://www.infraware-global.com/) [2012. 01 ~ 2014. 01]
 <br/>
 
 <h1>Skill & Experience</h1>
