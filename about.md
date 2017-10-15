@@ -56,7 +56,7 @@ BlueWhale에서 근무하고 있습니다.
   * Functional
   * TDD
   * DI
-
+  * NDK, JNI
 <!--
 <div class="tags">
 {% assign tags_list = site.tags %}
